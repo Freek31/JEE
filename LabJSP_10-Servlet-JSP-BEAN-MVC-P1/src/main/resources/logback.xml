@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+  
+         <file>${user.dir}/logs/logfile.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>${user.dir}/logs/logfile.%i.log.zip</FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        
+        <append>true</append>
+        
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+        
+    </appender>
+    
+    <appender name="ANALYTICS-FILE" class="ch.qos.logback.core.FileAppender">
+
+        <file>${user.dir}/logs/compteur.log</file>
+          <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <FileNamePattern>${user.dir}/logs/compteur.%i.log.zip</FileNamePattern>
+            <MinIndex>1</MinIndex>
+            <MaxIndex>5</MaxIndex>
+        </rollingPolicy>
+        
+        <append>true</append>
+        
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+        
+    </appender>
+    
+<!--     <appender name="html" class="ch.qos.logback.core.FileAppender"> -->
+<!--         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder"> -->
+<!--             <layout class="ch.qos.logback.core.html.HTMLLayout"> -->
+<!--                 <timestampFormat>yyyy-MM-dd'T'HH:mm:ss.SSSX</timestampFormat> -->
+<!--                 <timestampFormatTimezoneId>Etc/UTC</timestampFormatTimezoneId> -->
+
+<!--                 <jsonFormatter class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter"> -->
+<!--                     <prettyPrint>true</prettyPrint> -->
+<!--                 </jsonFormatter> -->
+<!--             </layout> -->
+<!--         </encoder> -->
+<!--     </appender> -->
+    
+    <!-- additivity=false ensures analytics data only goes to the analytics log -->
+    <logger name="compteur" level="DEBUG" additivity="false">
+        <appender-ref ref="ANALYTICS-FILE"/>
+    </logger>
+    
+    <root>
+        <appender-ref ref="FILE"/>
+    </root>
+    
+</configuration>

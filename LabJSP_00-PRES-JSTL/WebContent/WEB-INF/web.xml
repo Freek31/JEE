@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0">
+  <servlet>
+    <servlet-name>ArrayExample</servlet-name>
+    <servlet-class>pack1.ArrayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArrayExample</servlet-name>
+    <url-pattern>/test-array</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ArrayExample2</servlet-name>
+    <servlet-class>pack1.ArrayServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArrayExample2</servlet-name>
+    <url-pattern>/test-array2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ShowCities</servlet-name>
+    <servlet-class>pack1.ShowCities</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowCities</servlet-name>
+    <url-pattern>/show-cities</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>NoInvoker</servlet-name>
+    <servlet-class>pack1.NoInvokerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoInvoker</servlet-name>
+    <url-pattern>/servlet/*</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>

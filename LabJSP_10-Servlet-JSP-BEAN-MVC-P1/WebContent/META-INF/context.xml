@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context path="/LabJSP_10-Servlet-JSP-BEAN-MVC-P1" debug="0" reloadable="true" antiJARLocking="true" antiResourceLocking="true">
+
+<!-- pour POOL CONNEXION Tomcat -->
+<Resource name="jdbc/myoracle" auth="Container"
+              type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
+              url="jdbc:oracle:thin:@127.0.0.1:1521:mysid"
+              username="scott" password="tiger" maxTotal="20" maxIdle="10"
+              maxWaitMillis="-1"/>
+</Context>
+
